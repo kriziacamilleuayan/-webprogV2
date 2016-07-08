@@ -1,0 +1,124 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragon | <%: Page.Title %></title>
+    
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/wow.min.js") %>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/logo.png" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Path="/Scripts/wow.min.js" />
+                <asp:ScriptReference Path="/Scripts/blueimp-gallery.js" />
+                <asp:ScriptReference Path="/Scripts/bootstrap-image-gallery.js" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="border: 0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   <a class="navbar-brand" href="<%= Page.ResolveUrl("~/index.aspx") %>"><img src="~/images/logo.png" runat="server" alt="logo"></a>
+                </div>
+                <div class="navbar-collapse collapse  navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="<%= Page.ResolveUrl("~/index.aspx") %>">Home</a></li>
+                        <li><a href="<%= Page.ResolveUrl("~/history.aspx") %>">History</a></li>
+                        <li class="dropdown" id="species">
+                          <a id="species2" class="dropdown-toggle" data-toggle="dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut" href="<%= Page.ResolveUrl("~/mainspecies.aspx") %>">Species <span class="caret"></span></a>
+                          <ul class="dropdown-menu" style="background-color:black">
+                            <li><a href="<%= Page.ResolveUrl("~/Species/BritishDragons.aspx") %>">British Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/ChineseDragons.aspx") %>">Chinese Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/FrenchDragons.aspx") %>">French Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/JapaneseDragons.aspx") %>">Japanese Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/PrussianDragons.aspx") %>">Prussian Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/SpanishDragons.aspx") %>">Spanish Dragons</a></li>
+                            <li> <a href="<%= Page.ResolveUrl("~/Species/TurkishDragons.aspx") %>">Turkish Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/IncanDragons.aspx") %>">Incan Dragons</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Species/OtherDragons.aspx") %>">Other Dragons</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="<%= Page.ResolveUrl("~/news.aspx") %>">News</a></li>
+                        <li class="dropdown" id="art">
+                          <a id="art2" class="dropdown-toggle" data-toggle="dropdown" href="<%= Page.ResolveUrl("~/art.aspx") %>">Art <span class="caret"></span></a>
+                          <ul class="dropdown-menu" style="background-color:black">
+                            <li><a href="<%= Page.ResolveUrl("~/Art/Drawings.aspx") %>">Drawings</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Art/Movies.aspx") %>">Movies</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Art/Literature.aspx") %>">Literature</a></li>
+                            <li><a href="<%= Page.ResolveUrl("~/Art/Games.aspx") %>">Games</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer style="background-color:black">
+               <hr/>
+                <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                    <a class="text-center" href="<%= Page.ResolveUrl("~/index.aspx") %>"><img src="~/images/logo.png" runat="server" alt="logo"></a>
+                </div>
+                </div>
+                <p class="text-center">&copy; <%: DateTime.Now.Year %> - Krizia Camille Uayan BSIT 4-3</p>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+
+    <script type="text/javascript">
+         $(document).ready(function () {
+             new WOW().init();
+
+             var url = window.location.pathname;
+             var substr = url.split('/');
+             var urlaspx = substr[substr.length - 1];
+             $('.nav').find('.active').removeClass('active');
+             $('.nav li a').each(function () {
+                 if (this.href.indexOf(urlaspx) >= 0) {
+                     $(this).parent().addClass('active');
+                 }
+             });
+
+         });
+    </script>
+
+</html>
