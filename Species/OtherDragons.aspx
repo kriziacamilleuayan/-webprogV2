@@ -2,20 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    <script src='<%=ResolveClientUrl("~/Scripts/jquery-1.12.0.js") %>' type="text/javascript"></script>
-    <script src='<%=ResolveClientUrl("~/Scripts/viewportchecker.js") %>' type="text/javascript"></script>
-    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/html5shiv.js") %>'></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.intellisense.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.inview.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.isotope.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.prettyPhoto.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/main.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/mousescroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/smoothscroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/wow.min.js") %>"></script>
-
     <style>
         #species2
          {
@@ -37,6 +23,33 @@
 
    <section id="cta3" class="wow fadeIn" style="padding-top: 30px">
        <div class="container">
+
+           <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog" style="margin-top: 60px">
+            <div class="modal-content" style="background-color: #0a0909">
+                <div class="modal-header" style="border-bottom: 1px solid #0a0909;">
+                    <button type="button" style="color: white;" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+
               <div class="border">
                     <h3 class="wow fadeInLeftBig" style="color:white">Other Dragon Species</h3>
               </div>
@@ -47,9 +60,10 @@
               <p  class="wow fadeInLeft" style="color: #999999">"Feral" is not so much a dragon breed but a state of being that transcends all breeds. The term refers to a dragon who roams free, and refuses a handler. Aviators live in fear that a dragon egg they are assigned to will go feral (as often happened with Longwings when they were presented with male handlers). However, some dragons are simply born into the wild and know no other state of being, as was the case with the group of mountain dragons Temeraire's crew encountered on the trip from China to Turkey. That group presented an interesting look at how dragons behave without humans around to influence them. It is worthwhile to note that dragons do have their own natural language called Durzagh which is only spoken in "in the Pamirs, and the Karakoram" (BPW, 54). They also organize themselves into tribes with leaders and other positions of importance. They have their own tradition of storytelling, which involves a complicated pantomime. In Britain, there are feral dragons in the Pennines] mountains. These dragons were convinced by Temeraire to serve as messengers during Napoleon's invasion of Britain in 1807 in exchange for food.</p>
               <br />
               </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-          
+          <div id="links" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag26.jpg" runat="server" class="img-responsive" title="Ciara Feral Dragon by Hinderence">          
             <img src="~/images/species/drag26.jpg" runat="server" class="img-responsive wow flipInY" />
+        </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Ciara Feral Dragon by Hinderence</p>
            
           </div>
@@ -64,11 +78,11 @@
 
            <br />
         <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-          <p>
+         <div id="links1" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag27.jpg" runat="server" class="img-responsive" title="Dakota, by Kalia">          
             <img src="~/images/species/drag27.jpg" runat="server" class="img-responsive wow flipInY" />
+        </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Dakota, by Kalia</p>
-            </p>
           </div>
           <div class="col-sm-12 col-md-8 col-lg-8">
               <p class="wow fadeInLeft"><b><span class="red">Dakota</span></b></p>
@@ -85,18 +99,20 @@ Note: "Dakota" refers to the breed of the dragon, his given name is unknown.</p>
               <p  class="wow fadeInLeft" style="color: #999999">The Ironwing (Russian: Железное Крыло) was one of three parent strands used in the breeding of the Longwing, the other two being the British Sharpspitter and the French Honneur-d'Or. Presumably, because the breed name ends "-wing"; a convention so far only seen in breeds with unusual wing features, it could be that the Longwing breed inherited its titular wings from this breed.</p>
               <p  class="wow fadeInLeft" style="color: #999999">A Russian middleweight breed with a venomous bite.</p>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-         
+          <div id="links2" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag28.jpg" runat="server" class="img-responsive" title="Ironwing, by Drummergirl375">                   
             <img src="~/images/species/drag28.jpg" runat="server" class="img-responsive wow flipInY" />
+            </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Ironwing, by Drummergirl375</p>
             
           </div>
         </div>
 
         <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-        
+         <div id="links3" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag29.jpg" runat="server" class="img-responsive" title="Lindworm by Ashere">                           
             <img src="~/images/species/drag29.jpg" runat="server" class="img-responsive wow flipInY" />
+             </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Lindworm by Ashere</p>
            
           </div>
@@ -113,18 +129,20 @@ Note: "Dakota" refers to the breed of the dragon, his given name is unknown.</p>
               <p  class="wow fadeInLeft" style="color: #999999">A sea serpent. One specimen in the Indian Ocean measured nearly two hundred fifty feet long while only twenty feet thick. Smaller specimens measuring twelve feet or less have been found in the Atlantic, while those in the Pacific are rarely seen and no size measurements are mentioned. These may be non-sentient or it may be due to the lack of contact with humans that this species exhibits none of the dragon-like intelligence seen even in feral dragons. In a recent novel they are being used as a shipping fleet by the Chinese, effectively getting around the East India Company's monopoly.</p>
               <br />
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-
+          <div id="links4" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag30.jpg" runat="server" class="img-responsive" title="Attack of the sea-serpent. (c) Anke Eissmann">                           
             <img src="~/images/species/drag30.jpg" runat="server" class="img-responsive wow flipInY" />
+            </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Attack of the sea-serpent. (c) Anke Eissmann</p>
             
           </div>
         </div>
            
         <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-         
+         <div id="links5" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag31.jpg" runat="server" class="img-responsive" title="Drawing of a bunyip in 1890">                                    
             <img src="~/images/species/drag31.jpg" runat="server" class="img-responsive wow flipInY" />
+        </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Drawing of a bunyip in 1890</p>
             
           </div>
@@ -138,6 +156,69 @@ Note: "Dakota" refers to the breed of the dragon, his given name is unknown.</p>
    </section>
 
            <script type="text/javascript">
+               document.getElementById('links').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links1').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links2').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links3').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links5').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links4').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links5').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
          $(document).ready(function () {
 
              $("#species").addClass("active");

@@ -2,20 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    <script src='<%=ResolveClientUrl("~/Scripts/jquery-1.12.0.js") %>' type="text/javascript"></script>
-    <script src='<%=ResolveClientUrl("~/Scripts/viewportchecker.js") %>' type="text/javascript"></script>
-    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/html5shiv.js") %>'></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.intellisense.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.inview.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.isotope.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.prettyPhoto.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/main.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/mousescroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/smoothscroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/wow.min.js") %>"></script>
-
         <style>
         #species2
          {
@@ -37,6 +23,33 @@
 
        <section id="cta3" class="wow fadeIn" style="padding-top: 30px">
        <div class="container">
+
+                                  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog" style="margin-top: 60px">
+            <div class="modal-content" style="background-color: #0a0909">
+                <div class="modal-header" style="border-bottom: 1px solid #0a0909;">
+                    <button type="button" style="color: white;" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+           <div id="">
               <div class="border">
                     <h3 class="wow fadeInLeftBig" style="color:white">French Dragons</h3>
               </div>
@@ -52,9 +65,10 @@
               <p class="wow fadeInLeft"><b><span class="red">Defendeur-Brave (Brave Defender)</span></b></p>
               <p class="wow fadeInLeft" style="color: #999999">A heavyweight with a hooked tail.</p>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-         
+          <div id="links" class="col-sm-12 col-md-4 col-lg-4 text-right">
+           <a href="~/images/species/drag11.jpg" runat="server" class="img-responsive" title="Chanson-de-Guerre, by Shyangell">
             <img src="~/images/species/drag11.jpg" runat="server" class="img-responsive  wow flipInY" />
+            </a>
                <p class="text-center  wow fadeInDown" style="color: lightyellow">Chanson-de-Guerre, by Shyangell</p>
             
           </div>
@@ -70,9 +84,10 @@
            <br />
 
         <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-        
+         <div id="links2" class="col-sm-12 col-md-4 col-lg-4 text-right">
+        <a href="~/images/species/drag12.jpg" runat="server" class="img-responsive" title="Fleur-de-Nuit, by merangue">
             <img src="~/images/species/drag12.jpg" runat="server" class="img-responsive  wow flipInY" />
+        </a>
                <p class="text-center  wow fadeInDown" style="color: lightyellow">Fleur-de-Nuit, by merangue</p>
           
           </div>
@@ -103,9 +118,10 @@
              <p class="wow fadeInLeft"><b><span class="red">Pascals Blue</span></b></p>
              <p class="wow fadeInLeft" style="color: #999999">A light combat dragon. Silvery-grey with black and blue patches.</p>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-         
+          <div id="links1" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag13.jpg" runat="server" class="img-responsive" title="Papillon Noir, by Kalia">
             <img src="~/images/species/drag13.jpg" runat="server" class="img-responsive  wow flipInY" />
+        </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Papillon Noir, by Kalia</p>
             
           </div>
@@ -113,9 +129,10 @@
         <br />
 
        <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-         
+         <div id="links3" class="col-sm-12 col-md-4 col-lg-4 text-right">
+         <a href="~/images/species/drag14.jpg" runat="server" class="img-responsive" title="Pou-de-Ciel, by Drummergirl375">
             <img src="~/images/species/drag14.jpg" runat="server" class="img-responsive  wow flipInY" />
+         </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Pou-de-Ciel, by Drummergirl375</p>
            
           </div>
@@ -140,9 +157,46 @@
                </div>
            </div>
         </div>
+        </div>
         </section>
 
         <script type="text/javascript">
+            document.getElementById('links3').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
+            document.getElementById('links1').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
+            document.getElementById('links2').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
          $(document).ready(function () {
 
              $("#species").addClass("active");

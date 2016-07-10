@@ -2,19 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    <script src='<%=ResolveClientUrl("~/Scripts/jquery-1.12.0.js") %>' type="text/javascript"></script>
-    <script src='<%=ResolveClientUrl("~/Scripts/viewportchecker.js") %>' type="text/javascript"></script>
-    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/html5shiv.js") %>'></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.intellisense.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.inview.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.isotope.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.prettyPhoto.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/main.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/mousescroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/smoothscroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/wow.min.js") %>"></script>
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -36,11 +23,12 @@
                   <p  style="color: #999999">In folklore, the Loch Ness Monster is an aquatic being which reputedly inhabits Loch Ness in the Scottish Highlands. It is similar to other supposed lake monsters in Scotland and elsewhere, although its description varies; it is described by most as large. Popular interest and belief in the creature has varied since it was brought to worldwide attention in 1933. Evidence of its existence is anecdotal, with few, disputed photographs and sonar readings.</p>
                   <p  style="color: #999999">The most common speculation among believers is that the creature represents a line of long-surviving plesiosaurs. While adherents of cryptozoology, a pseudoscience, describe the creature as a cryptid, the scientific community regards the Loch Ness Monster as a myth, explaining sightings as misidentifications of mundane objects, hoaxes, and wishful thinking. The creature has been affectionately called Nessie (Scottish Gaelic: Niseag) since the 1940s.</p>
               </div>
-                  <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-              <p>
+                  <div id="links" class="col-sm-12 col-md-4 col-lg-4 text-right">
+                 <a href="~/images/news/drag1.jpg" runat="server" class="img-responsive" title="The surgeons photograph of 1934, now known to have been a hoax">                                              
                 <img src="~/images/news/drag1.jpg" runat="server" class="img-responsive" />
+                </a>
                    <p class="text-center" style="color: lightyellow">The "surgeon's photograph" of 1934, now known to have been a hoax</p>
-                </p>
+               
               </div>
             </div>
         </div>
@@ -56,11 +44,12 @@
                   <p  style="color: #999999">In an account of Two Voyages to New England, published in 1674, John Josselyn recalled a 1639 conversation with residents of Massachusetts colony. They saw a sea-serpent or snake, that lay coiled upon a rock at Cape Ann. This is the first known printed reference to an American Sea Serpent. In the next century and a half, thousands of residents of New England and Canada's maritime provinces would observe comparable creatures.</p>
                   <p style="color: #999999">In May 1780, Capt. George Little saw a huge serpent comming down the Bay on the surface of the water. The cutter was maned and armed and he went himself in a boat and proceeded after the serpent. Within a hundred feet, the mariners were ordered to fire on him, but before they could make ready, the serpent dove. He was not less than 45-50 feet in lenght, the largest diameter of it's body. It's head is nearly the size of a man. It wore the appearance of a common black snake.</p> 
                      </div>
-                  <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-              <p>
+                  <div id="links1" class="col-sm-12 col-md-4 col-lg-4 text-right">
+                 <a href="~/images/news/drag2.jpg" runat="server" class="img-responsive" title="Sea Serpent">                                                            
                 <img src="~/images/news/drag2.jpg" runat="server" class="img-responsive" />
+                </a>
                    <p class="text-center" style="color: lightyellow">Sea Serpent</p>
-                </p>
+                
               </div>
             </div>
         </div>
@@ -169,6 +158,53 @@
             </div>
         </div>
     </section>
+
+        
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog" style="margin-top: 60px">
+            <div class="modal-content" style="background-color: #0a0909">
+                <div class="modal-header" style="border-bottom: 1px solid #0a0909;">
+                    <button type="button" style="color: white;" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script type="text/javascript">
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
+            document.getElementById('links1').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+    </script>
 
 </asp:Content>
 

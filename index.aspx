@@ -127,11 +127,10 @@
                     <p class="wow fadeInLeft" style="color: #999999">A <span class="red"><b>dragon</b></span> is a mythological representation of a reptile. In antiquity, dragons were mostly envisaged as serpents, but since the Middle Ages, it has become common to depict them with legs, resembling a lizard. Dragons are usually shown in modern times with a body like a huge lizard, or a snake with two pairs of lizard-type legs, and able to emit fire from their mouths. The European dragon has bat-like wings growing from its back. A dragon-like creature with wings but only a single pair of legs is known as a wyvern. </p>
                     <p class="wow fadeInLeft" style="color: #999999">The two traditions may have evolved separately, but have influenced each other to a certain extent, particularly with the cross-cultural contact of recent centuries. The English word dragon derives from Greek δράκων (drákōn), "dragon, serpent of huge size, water-snake".</p>
                 </div>
-                <div class="col-sm-4 col-md-3 col-lg-3 col-xs-12 text-right">
-                <p>
-                   <img src="images/kalam.jpg" class="img-responsive wow flipInY" />
-                  <%-- <asp:HyperLink ID="HyperLink4"  CssClass="btn btn-1 btn-1c" NavigateUrl="http://www.brainyquote.com/quotes/authors/a/a_p_j_abdul_kalam.html" runat="server">Download Now</asp:HyperLink>--%>
-                </p>
+                <div id="links1" class="col-sm-4 col-md-3 col-lg-3 col-xs-12 text-right">
+             <a href="~/images/kalam.jpg" runat="server" class="img-responsive" title="Dragon">                                
+                   <img src="images/kalam.jpg" runat="server" class="img-responsive wow flipInY" />
+                </a>
                 </div>
             </div>              
             
@@ -161,7 +160,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                <h1 class="wow bounceIn" style="color: white">Meet the Different <span class="red">Dragons</span> All Over the World</h1>
+                <h1 class="wow bounceIn" style="color: white">Meet Different <span class="red">Dragons</span> All Over the World</h1>
                     <h3 class="wow bounceIn">Are you worthy enough to face them?</h3>
                 </div>
                 </div>
@@ -292,14 +291,13 @@
             </div>
         </div>
     </section>
-        <section id="cta3" class="wow fadeIn">
+        <section id="cta4" class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 text-left">
-                <p>
-                   <img src="images/drag1.jpg" class="img-responsive wow flipInY" />
-                  <%-- <asp:HyperLink ID="HyperLink4"  CssClass="btn btn-1 btn-1c" NavigateUrl="http://www.brainyquote.com/quotes/authors/a/a_p_j_abdul_kalam.html" runat="server">Download Now</asp:HyperLink>--%>
-                </p>
+                <div id="links" class="col-sm-4 text-left">
+                     <a href="~/images/drag1.jpg" runat="server" class="img-responsive" title="Small Dragon">                
+                           <img src="~/images/drag1.jpg" runat="server" class="img-responsive wow flipInY" />
+                      </a>
                 </div>
                 <div class="col-sm-8">
                     <p class="wow fadeInLeft" style="color: #999999">It's not clear when or where stories of dragons first emerged, but the huge, flying serpents were described by the ancient Greeks and Sumerians. For much of history dragons were thought of as being like any other exotic animal: sometimes useful and protective, other times harmful and dangerous. That changed when Christianity spread across the world; dragons took on a decidedly sinister interpretation and came to represent Satan. In medieval times, most people who heard anything about dragons knew them from the Bible, and it's likely that most Christians at the time believed in the literal existence of dragons. After all, Leviathan — the massive monster described in detail in the Book of Job, chapter 41 — seems to describe a dragon in detail:</p>
@@ -314,6 +312,53 @@
 
     <!--/#bottom-->
 
+    
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog" style="margin-top: 60px">
+            <div class="modal-content" style="background-color: #0a0909">
+                <div class="modal-header" style="border-bottom: 1px solid #0a0909;">
+                    <button type="button" style="color: white;" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript">
+            document.getElementById('links').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+
+            document.getElementById('links1').onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+    </script>
 
 </asp:Content>
 

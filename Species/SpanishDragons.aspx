@@ -2,20 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
-    <script src='<%=ResolveClientUrl("~/Scripts/jquery-1.12.0.js") %>' type="text/javascript"></script>
-    <script src='<%=ResolveClientUrl("~/Scripts/viewportchecker.js") %>' type="text/javascript"></script>
-    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/html5shiv.js") %>'></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery-1.10.2.intellisense.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.inview.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.isotope.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/jquery.prettyPhoto.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/main.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/mousescroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/smoothscroll.js") %>"></script>
-    <script type="text/javascript" src="<%=ResolveClientUrl("~/Scripts/wow.min.js") %>"></script>
-
     <style>
         #species2
          {
@@ -37,6 +23,33 @@
 
        <section id="cta3" class="wow fadeIn" style="padding-top: 30px">
        <div class="container">
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog" style="margin-top: 60px">
+            <div class="modal-content" style="background-color: #0a0909">
+                <div class="modal-header" style="border-bottom: 1px solid #0a0909;">
+                    <button type="button" style="color: white;" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+
               <div class="border">
                     <h3 class="wow fadeInLeftBig" style="color:white">Spanish Dragons</h3>
               </div>
@@ -49,10 +62,12 @@
                <p  class="wow fadeInLeft" style="color: #999999">Cauchador Reals have ridged spinal columns running from the base of the skull to the end of the tail. Male Cauchador Reals have prominent forehead horns which resemble crowns, and are used in competitions where two males will grapple and compete in shows of strength for territory and mates. They have bright orange hides, while females have orange-brown hides. Both genders have yellow undersides and orange wings.</p>
               <br />
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 text-right">
+          <div id="links" class="col-sm-12 col-md-4 col-lg-4 text-right">
           
               <br />
+          <a href="~/images/species/drag19.jpg" runat="server" class="img-responsive" title="Cauchador Real, by Kalia">
             <img src="~/images/species/drag19.jpg" runat="server" class="img-responsive  wow flipInY" />
+          </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Cauchador Real, by Kalia</p>
             
           </div>
@@ -60,9 +75,10 @@
            <br />
 
         <div class="row">
-         <div class="col-sm-12 col-md-4 col-lg-4 text-right">
-          
+         <div id="links1" class="col-sm-12 col-md-4 col-lg-4 text-right">
+          <a href="~/images/species/drag20.jpg" runat="server" class="img-responsive" title="Flecha-del-Fuego, by shyangell">          
             <img src="~/images/species/drag20.jpg" runat="server" class="img-responsive  wow flipInY" />
+           </a>
                <p class="text-center wow fadeInDown" style="color: lightyellow">Flecha-del-Fuego, by shyangell</p>
            
           </div>
@@ -75,6 +91,24 @@
         </section>
 
            <script type="text/javascript">
+               document.getElementById('links').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
+               document.getElementById('links1').onclick = function (event) {
+                   event = event || window.event;
+                   var target = event.target || event.srcElement,
+                       link = target.src ? target.parentNode : target,
+                       options = { index: link, event: event },
+                       links = this.getElementsByTagName('a');
+                   blueimp.Gallery(links, options);
+               };
+
          $(document).ready(function () {
 
              $("#species").addClass("active");
